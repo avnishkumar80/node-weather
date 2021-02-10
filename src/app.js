@@ -9,6 +9,7 @@ const hbs = require('hbs')
 // console.log(__filename)
 
 const app = express()
+const port = process.env.PORT || 3000
 const publicDirectorypath = path.join(__dirname,'../public')
 const viewPath = path.join(__dirname,'../templates/views')
 const partialPath = path.join(__dirname,'../templates/partials')
@@ -82,6 +83,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen('3000',()=>{
-    console.log("listening on 3000")
+app.listen(port,()=>{
+    console.log("listening on port " + port)
 })
